@@ -30,8 +30,8 @@ const userDetailsPage = async ({
 
           <Image
             className="profile_image"
-            src={user?.image}
-            alt={user?.name}
+            src={user?.image as string}
+            alt={user?.name as string}
             width={220}
             height={220}
           />

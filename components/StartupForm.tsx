@@ -66,6 +66,7 @@ const StartupForm = () => {
       };
     }
   };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [state, formAction, isPending] = useActionState(handleSubmit, {
     error: "",
     status: "INITIAL",
