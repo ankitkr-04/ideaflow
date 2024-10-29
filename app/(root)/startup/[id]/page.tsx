@@ -23,7 +23,7 @@ const startupDetailsPage = async ({
   const md = markdownIt();
   const id = (await params).id;
 
-  const [post, { select: editorPosts }] = await Promise.all([
+  const [post,  {select : editorPosts}]= await Promise.all([
     client.fetch(STARTUP_BY_ID_QUERY, { id }),
     client.fetch(PLAYLIST_BY_SLUG_QUERY, {
       slug: "editor-picks",
