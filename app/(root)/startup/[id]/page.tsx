@@ -12,14 +12,14 @@ import { Suspense } from "react";
 
 export const experimental_ppr = true;
 
-const StartupDetailsPage = async ({
+const startupDetailsPage = async ({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) => {
   const md = markdownIt();
   const id = (await params).id;
-  const post: STARTUP_BY_ID_QUERYResult[0] = await client.fetch(
+  const post: STARTUP_BY_ID_QUERYResult = await client.fetch(
     STARTUP_BY_ID_QUERY,
     { id }
   );
@@ -35,7 +35,7 @@ const StartupDetailsPage = async ({
       </section>
       <section className="section_container">
         <img
-          src={post.image}
+          src={post.image as string}
           alt="thumbnail"
           className="w-full h-auto rounded-xl"
         />
@@ -84,4 +84,4 @@ const StartupDetailsPage = async ({
   );
 };
 
-export default StartupDetailsPage;
+export default startupDetailsPage;
