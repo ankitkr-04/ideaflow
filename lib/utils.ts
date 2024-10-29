@@ -19,10 +19,14 @@ export function formatDate(date: string) {
 
 export function formatNumber(number: number) {
   if (number >= 1000000) {
-    return (number / 1000000).toFixed(1).replace(/\.0$/, "") + "M"; // Convert to millions
+    return (number / 1000000).toFixed(1).replace(/\.0$/, "") + "M Views"; // Convert to millions
   } else if (number >= 1000) {
-    return (number / 1000).toFixed(1).replace(/\.0$/, "") + "k"; // Convert to thousands
+    return (number / 1000).toFixed(1).replace(/\.0$/, "") + "K Views"; // Convert to thousands
+  } else if (number > 1) {
+    return number.toString() + " Views"; // Return the number as is if below 1000
+  } else if (number === 1) {
+    return "1 View";
   } else {
-    return number.toString(); // Return the number as is if below 1000
+    return "No Views";
   }
 }
