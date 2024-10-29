@@ -45,7 +45,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             alt="Placeholder"
             width={48}
             height={48}
-            src="https://placehold.co/48x48"
+            src={author?.image as string}
           />
         </Link>
       </div>
